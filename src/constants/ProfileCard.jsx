@@ -2,16 +2,21 @@ import React from 'react'
 
 function ProfileCard(props) {
   return (
-    <div className=' min-w-[250px] p-10 main-card '>
-        <div className='flex flex-col rounded-xl bg-slate-300 gap-5 p-9 hover:border hover:scale-105 red-blue-gradient text-white max-w-[253px]' style={{ transitionDuration: '0.15s' }}
+    <div className={`min-w-[250px] p-10 ${props.hello}`}>
+        <div className='flex flex-col rounded-xl bg-slate-300 gap-5 p-9 hover:border hover:scale-105 red-blue-gradient text-white min-w-[250px]' style={{ transitionDuration: '0.15s' }}
     >
+
+        {/* <div className='text-2xl text-white'></div> */}
         <div className='flex justify-center'>
-            <img className='h-32 w-32 rounded-full object-contains'  src="/furqan_profile.jpeg" alt="profile-picture" />
+            <img className='h-32 w-32 rounded-full object-contains'  src=
+            {props.image ? props.image : "/furqan_profile.jpeg"}
+            // "/furqan_profile.jpeg"
+             alt="profile-picture" />
         </div>
-        <div className='flex justify-center items-center text-2xl'>{props.name}</div>
+        <div className='flex justify-center items-center text-2xl'>{props.name} </div>
 
         <div className='flex flex-col gap-2 mb-2 mt-[-8px]'>
-            <div className='flex gap-2 '>
+            <div className='flex gap-2 justify-center'>
                 <div className=''>{props.age} <span>,</span></div>
                 <div>{props.job}</div>
             </div>

@@ -4,8 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   font-family: 'Poppins', sans-serif;
+  background-image: url('/background_color8.png');
+  background-origin: padding-box;
+  /* background-size: 100% 100%; */
+  background-repeat: repeat;
+  ;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url('/background_main4.jpg');
+    background-origin: padding-box;
+    background-size: cover;
+    /* background-repeat: repeat; */
+  }
 }
 :root {
   --black-gradient: linear-gradient(
