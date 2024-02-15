@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProfileCard(props) {
   return (
-    <div className=' min-w-[250px]'>
+    <div className=' min-w-[250px] p-10 main-card '>
         <div className='flex flex-col rounded-xl bg-slate-300 gap-5 p-9 hover:border hover:scale-105 red-blue-gradient text-white max-w-[253px]' style={{ transitionDuration: '0.15s' }}
     >
         <div className='flex justify-center'>

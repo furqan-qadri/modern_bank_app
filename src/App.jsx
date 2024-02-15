@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProfileCard from './constants/ProfileCard';
 import { useForm } from 'react-hook-form';
+import Maincta from './Maincta';
+import downloadjs from 'downloadjs';
+import html2canvas from 'html2canvas';
+
+
 
 function App() {
+
+  const handleCaptureClick = async () => {
+    const canvas = await html2canvas(document.querySelector('.main-card'));
+    const dataURL = canvas.toDataURL('image/jpeg');
+    downloadjs(dataURL, `${submittedData.email}_card.jpeg`, 'image/jpeg');
+  };
+
+  
+
   const { register, handleSubmit, setError, formState:{errors, isSubmitting}, } = useForm({
     defaultValues:{
-      email:'test@email.com',
+      email:'',
       password:'',
     },
   });
-  const onSubmit =  async (data) => {
 
-    try{
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    // throw new Error();
-    console.log(data); 
+  const [submittedData, setSubmittedData] = useState(null);
+
+  const onSubmit = async (data) => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setSubmittedData(data);
+    } catch(error) {
+      setError("email", {
+        message: "This email is already taken",
+      });
     }
-    catch(error){
-      setError("email",{
-        message:"This email is already taken",
-      })
-      
-    }
-   
   };
 
   return (
-    <div className='flex flex-col'>
-
+    <div className='flex flex-col w-100 px-4 pb-8 xl:gap-1 '>
       <div className='flex flex-col gap-10 justify-center items-center'>
         <ProfileCard name="Furqan Qadri" age="24" job="Software Engineer" city="Kuala Lumpur"/>
       </div> 
+
+    <Maincta  type="submit" text="Download card" onClick={handleCaptureClick} />
 
       <div className='form-div mt-10 px-4 flex justify-center items-center'>
           <form onSubmit={handleSubmit(onSubmit)} className='
@@ -39,14 +52,12 @@ function App() {
 
           <input className='border rounded-full hover:border-2 border-black p-3' {...register("email",{
             required:"Email is required broooo",
-            // pattern: /^\S+@\S+$/i,
             validate: (value) => {
               if (!value.includes('@')) {
                 return 'Email must contain @ broooo'
               }
               return true;
             }
-
           })} type="text" placeholder='email'/>
           {errors.email &&
           (<div className='text-red-500'>{errors.email.message}</div>)}
@@ -68,7 +79,25 @@ function App() {
         </form> 
       </div>
 
-     
+
+      {submittedData && (
+
+
+        <div className='mt-4'>
+          {/* <h2>Submitted Data:</h2>
+          <p>Email: {submittedData.email}</p>
+          <p>Password: {submittedData.password}</p> */}
+
+          <ProfileCard name={submittedData.password} age="24" job="Software Engineer" city="Kuala Lumpur"/>
+
+
+         
+
+        </div>
+
+
+
+      )}
     </div>
   );
 }
