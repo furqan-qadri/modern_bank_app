@@ -5,11 +5,13 @@ import Maincta from "./Maincta";
 import downloadjs from "downloadjs";
 import html2canvas from "html2canvas";
 import MainsForm from "./MainsForm";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <div>
+    <div className="mb-6">
       <MainsForm />
+      <Footer />
     </div>
   );
 }

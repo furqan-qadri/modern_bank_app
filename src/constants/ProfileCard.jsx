@@ -8,7 +8,7 @@ function ProfileCard(props) {
 
         {/* <div className='text-2xl text-white'></div> */}
         <div className='flex justify-center'>
-            <img className='h-32 w-32 rounded-full object-contains'  src=
+            <img className=' top-1 h-32 w-32 rounded-full  bg-white'  src=
             {props.image ? props.image : "/furqan_profile.jpeg"}
             // "/furqan_profile.jpeg"
              alt="profile-picture" />

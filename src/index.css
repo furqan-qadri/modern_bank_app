@@ -1,8 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap');
+
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.protest-revolution-regular {
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -37,9 +50,10 @@ body {
 
 .red-blue-gradient{
   background-image: linear-gradient(to bottom left, #2626f0, #ef2de8);
+}
 
-
-
+.protest-riot-regular {
+  font-family: "Protest Riot", sans-serif;
 }
 
 .text-gradient {
