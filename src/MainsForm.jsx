@@ -46,7 +46,7 @@ function MainsForm() {
         </div>
 
       <ProfileCard
-        name="Furqan Qadri"
+        name="BG Feature"
         age="24"
         job="Software Engineer"
         city="Kuala Lumpur"
