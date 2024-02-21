@@ -47,7 +47,7 @@ function MainsForm() {
 
       <ProfileCard
         name="BG Feature"
-        age="24"
+        age="just bg"
         job="Software Engineer"
         city="Kuala Lumpur"
       />
