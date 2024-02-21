@@ -45,6 +45,7 @@ function MainsForm() {
         <span className="text-6xl text-white protest-riot-regular "> Staging Card </span>
         <span className="text-white">this is the staging</span>
         </div>
+        
 
       <ProfileCard
         name="Furqan Qadri"
