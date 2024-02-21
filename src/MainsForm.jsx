@@ -50,7 +50,7 @@ function MainsForm() {
       <ProfileCard
         name="Furqan Qadri"
         age="24"
-        job="Software Engineer"
+        job="Software Engineer staging"
         city="Kuala Lumpur"
       />
 
