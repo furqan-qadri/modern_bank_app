@@ -42,7 +42,8 @@ function MainsForm() {
   return (
     <div className="flex flex-col justify-center items-center pt-8  pb-12">
         <div>
-        <span className="text-6xl text-white protest-riot-regular "> Social Card </span>
+        <span className="text-6xl text-white protest-riot-regular "> Staging Card </span>
+        <span className="text-white">this is the staging</span>
         </div>
 
       <ProfileCard
